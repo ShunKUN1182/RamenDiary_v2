@@ -1,9 +1,19 @@
 import { supabase } from "./supabase.js";
 
 const ramenDatas = document.querySelector(".ramen_datas");
+const databaseName = "ramen_data";
+const loginUser = JSON.parse(localStorage.getItem("loginUser"));
+
+if (!loginUser) {
+    alert("ログインしてください");
+    window.location.href = "./login.html";
+}
 
 async function loadData() {
-    const { data, error } = await supabase.from("ramen_data").select("*");
+    const { data, error } = await supabase
+        .from(databaseName)
+        .select("*")
+        .eq("userID", loginUser.id);
     console.log("data:", data);
     console.log("error:", error);
     for (let i = 0; i < data.length; i++) {
