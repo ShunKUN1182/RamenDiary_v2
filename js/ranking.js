@@ -1,5 +1,6 @@
 import { supabase } from "./supabase.js";
 
+const rankingOutput = document.querySelector(".ranking_Wrap");
 const ramenDatabaseName = "ramen_data";
 const userDatabaseName = "user_data";
 const loginUser = JSON.parse(localStorage.getItem("loginUser"));
@@ -45,7 +46,7 @@ async function loadRanking() {
 
         return {
             ...rank,
-            user_name: user ? user.user_name : "名無しさん",
+            user_name: user ? user.name : "名無しさん",
         };
     });
 
@@ -56,6 +57,51 @@ async function loadRanking() {
     });
 
     console.log(rankingArray);
+
+    for (let i = 0; i < rankingArray.length; i++) {
+        if (loginUser.id === rankingArray[i].userID) {
+            rankingOutput.insertAdjacentHTML(
+                "beforeend",
+                `
+            <div class="ranking_item" id="myCard">
+                <span id="banner">あなた</span>
+                <div class="rank">
+                    <h3>${rankingArray[i].rank}</h3>
+                </div>
+                <div class="ranking_item_texts">
+                    <div class="ranking_item_data">
+                        <h2>${rankingArray[i].user_name}</h2>
+                        <p><span>${rankingArray[i].ramen_count}</span>杯のラーメンを記録</p>
+                    </div>
+                    <div class="ranking_item_price">
+                        <h3>¥${rankingArray[i].total_price}</h3>
+                    </div>
+                </div>
+            </div>
+          `,
+            );
+        } else {
+            rankingOutput.insertAdjacentHTML(
+                "beforeend",
+                `
+              <div class="ranking_item">
+                  <div class="rank">
+                      <h3>${rankingArray[i].rank}</h3>
+                  </div>
+                  <div class="ranking_item_texts">
+                      <div class="ranking_item_data">
+                          <h2>${rankingArray[i].user_name}</h2>
+                          <p><span>${rankingArray[i].ramen_count}</span>杯のラーメンを記録</p>
+                      </div>
+                      <div class="ranking_item_price">
+                          <h3>¥${rankingArray[i].total_price}</h3>
+                      </div>
+                  </div>
+              </div>
+            `,
+            );
+        }
+    }
 }
 
 loadRanking();
