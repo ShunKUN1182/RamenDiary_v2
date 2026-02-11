@@ -1,6 +1,7 @@
 import { supabase } from "./supabase.js";
 
 const ramenDatas = document.querySelector(".ramen_datas");
+const ramenFilter = document.querySelector("#ramenFilter");
 const databaseName = "ramen_data";
 const loginUser = JSON.parse(localStorage.getItem("loginUser"));
 
@@ -9,6 +10,8 @@ if (!loginUser) {
     window.location.href = "./login.html";
 }
 
+let ramenBox = [];
+
 async function loadData() {
     const { data, error } = await supabase
         .from(databaseName)
@@ -16,31 +19,51 @@ async function loadData() {
         .eq("userID", loginUser.id);
     console.log("data:", data);
     console.log("error:", error);
+
     for (let i = 0; i < data.length; i++) {
         if (data[i].ramen_date) {
             let timeData = data[i].ramen_date.split("-");
-            ramenDatas.insertAdjacentHTML(
-                "beforeend",
-                `
+            ramenBox.push({
+                image_url: data[i].image_url,
+                ramen_name: data[i].ramen_name,
+                ramen_taste: data[i].ramen_taste,
+                timeData: timeData,
+                ramen_price: data[i].ramen_price,
+            });
+        }
+    }
+    outputRamen(ramenBox);
+}
+
+function outputRamen(box) {
+    ramenDatas.innerHTML = "";
+    box.forEach((r) => {
+        ramenDatas.insertAdjacentHTML(
+            "beforeend",
+            `
                     <div class="ramen_data">
-                        <img src="${data[i].image_url}" alt="" />
+                        <img src="${r.image_url}" alt="" />
                         <div class="ramen_data_text">
                             <div class="ramen_data_shop">
-                                <h2>${data[i].ramen_name}</h2>
-                                <p>${data[i].ramen_taste}</p>
+                                <h2>${r.ramen_name}</h2>
+                                <p>${r.ramen_taste}</p>
                             </div>
                             <div class="ramen_data_option">
                                 <p>
-                                    <time datetime="${timeData}">${timeData[0]}年${timeData[1]}月${timeData[2]}日</time>
+                                    <time datetime="${r.timeData}">${r.timeData[0]}年${r.timeData[1]}月${r.timeData[2]}日</time>
                                 </p>
-                                <h3>¥${data[i].ramen_price}</h3>
+                                <h3>¥${r.ramen_price}</h3>
                             </div>
                         </div>
                     </div>
                 `,
-            );
-        }
-    }
+        );
+    });
 }
 
 loadData();
+
+ramenFilter.addEventListener("input", (e) => {
+    let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_name.includes(e.target.value));
+    outputRamen(NewramenBox);
+});
