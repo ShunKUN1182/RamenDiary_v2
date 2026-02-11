@@ -23,5 +23,6 @@ submitBtn.addEventListener("click", async () => {
         alert("error");
     } else {
         alert("アカウントが登録されました！");
+        window.location.href = "./login.html";
     }
 });
