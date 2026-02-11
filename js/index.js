@@ -9,6 +9,12 @@ const ramenDate = document.querySelector("#ramenDate");
 const ramenPrice = document.querySelector("#ramenPrice");
 const ramenTaste = document.querySelector("#ramenTaste");
 const changePicture = document.querySelector("#changePicture");
+const loginUser = JSON.parse(localStorage.getItem("loginUser"));
+
+if (!loginUser) {
+    alert("ログインしてください");
+    window.location.href = "./login.html";
+}
 
 const today = new Date();
 console.log(today);
@@ -42,20 +48,24 @@ submitBtn.addEventListener("click", async () => {
     const reFile = file.name.split(".").pop();
     const fileName = `${crypto.randomUUID()}.${reFile}`;
     console.log(fileName);
-    const { data, error } = await supabase.storage.from(bucketName).upload(fileName, file);
-    console.log("data:", data);
-    console.log("error:", error);
+    const { data: uploadData, error: uploadError } = await supabase.storage
+        .from(bucketName)
+        .upload(fileName, file);
+    console.log("data:", uploadData);
+    console.log("error:", uploadError);
     const { data: urlData } = supabase.storage.from(bucketName).getPublicUrl(fileName);
     console.log(urlData);
 
-    await supabase.from(databaseName).insert({
+    const { data: insertData, error: insertError } = await supabase.from(databaseName).insert({
+        userID: loginUser.id,
         image_url: urlData.publicUrl,
         ramen_name: textData.value,
         ramen_price: ramenPrice.valueAsNumber,
         ramen_taste: ramenTaste.value,
         ramen_date: ramenDate.value,
     });
-    if (error) {
+    if (insertError) {
+        console.log(insertError);
         alert("error");
     } else {
         location.reload();
