@@ -62,7 +62,7 @@
 }
 
 #myCard {
-    border: tomato 3px solid;
+    border: var(--mainColor) 3px solid;
     position: relative;
     #banner {
         position: absolute;
@@ -70,7 +70,7 @@
         left: 0;
         width: 50px;
         height: 20px;
-        background-color: tomato;
+        background-color: var(--mainColor);
         color: #fff;
         display: flex;
         justify-content: center;
