@@ -1,0 +1,75 @@
+main {
+    margin-top: 100px;
+}
+
+.headWrap {
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+}
+
+.userInfo_Wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    gap: 10px;
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h2 {
+            font-size: 16px;
+        }
+        input {
+            background-color: #fff;
+            width: 100%;
+            height: 50px;
+            border: solid 1px #9b9b9b;
+            border-radius: 10px;
+            padding: 20px;
+        }
+    }
+    .submit_Btn {
+        height: 50px;
+        background-color: var(--baseColor);
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+        p {
+            width: 100%;
+            height: 100%;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.newRegistration_Wrap {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 14px;
+        a {
+            font-size: 16px;
+            color: var(--baseColor);
+            font-weight: bold;
+        }
+    }
+}

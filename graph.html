@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ラーメン日記</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&family=Oswald:wght@329&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=Yuji+Mai&display=swap"
+            rel="stylesheet"
+        />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=image"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=image"
+        />
+        <link rel="stylesheet" href="css/ress.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/graph.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="module" src="js/graph.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1><img src="images/logo.jpg" alt="RamenDiary" /></h1>
+        </header>
+
+        <main>
+            <div class="total_price">
+                <div>
+                    <p>合計金額</p>
+                    <p><a href="ranking.html">ランキングはこちら</a></p>
+                </div>
+                <h2>¥<span id="totalPrice">????</span></h2>
+                <h3><span id="ramenCount">?</span>杯のラーメンを記録</h3>
+            </div>
+            <div class="graph_wrap">
+                <canvas id="tasteChart"></canvas>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img src="images/footer_icon1.png" alt="" />
+                            <p>入力</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="view_vlog.html">
+                            <img src="images/footer_icon2.png" alt="" />
+                            <p>日記を見る</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="graph.html">
+                            <img src="images/footer_icon3_red.png" alt="" />
+                            <p style="color: #992e36">グラフ</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="option.html">
+                            <img src="images/footer_icon4.png" alt="" />
+                            <p>設定</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>

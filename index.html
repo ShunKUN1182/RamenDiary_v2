@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ラーメン日記</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&family=Oswald:wght@329&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sawarabi+Mincho&family=Yuji+Mai&display=swap"
+            rel="stylesheet"
+        />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="css/ress.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <script type="module" src="js/index.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1><img src="images/logo.jpg" alt="RamenDiary" /></h1>
+        </header>
+        <main>
+            <div class="add_ramen_data">
+                <div class="add_pictures">
+                    <input type="file" id="addPicture" />
+                    <div id="changePicture">
+                        <label for="addPicture">
+                            <img src="images/icon_Vector.png" alt="" />
+                            <span>写真を追加する</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="shop_box">
+                    <input type="text" placeholder="例：さかこうラーメン" id="textData" />
+                </div>
+                <div class="ramen_items">
+                    <div>
+                        <p>カテゴリー</p>
+                        <select id="ramenTaste">
+                            <option>しょうゆ</option>
+                            <option>みそ</option>
+                            <option>しお</option>
+                            <option>とんこつ</option>
+                            <option>つけ麺</option>
+                            <option>二郎系</option>
+                            <option>家系</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>金額</p>
+                        <input type="number" step="100" placeholder="¥1000" id="ramenPrice" />
+                    </div>
+                    <div>
+                        <p>日付</p>
+                        <input type="date" value="2026-02-01" id="ramenDate" />
+                    </div>
+                </div>
+                <div class="ramen_data_keep">
+                    <button type="button" id="submit_btn">日記を保存</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img src="images/footer_icon1_red.png" alt="" />
+                            <p style="color: #992e36">入力</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="view_vlog.html">
+                            <img src="images/footer_icon2.png" alt="" />
+                            <p>日記を見る</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="graph.html">
+                            <img src="images/footer_icon3.png" alt="" />
+                            <p>グラフ</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="option.html">
+                            <img src="images/footer_icon4.png" alt="" />
+                            <p>設定</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+.view_vlog {
+    margin-top: 90px;
+}
+
+.search_box {
+    margin: 0 20px;
+    background-color: var(--cardBackground);
+    height: 30px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 100;
+        top: 18%;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url("../images/Search.png");
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        margin-left: 35px;
+        font-size: 14px;
+    }
+}
+
+.ramen_datas {
+    margin: 20px 20px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    .ramen_data {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: var(--whiteColor);
+        height: 150px;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+        padding: 24px 20px;
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+            border: solid 4px var(--baseColor);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+        }
+        .ramen_data_text {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            .ramen_data_shop {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                h2 {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+            .ramen_data_option {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                p {
+                    color: var(--borderGray);
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                h3 {
+                    color: var(--accentColor);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.headWrap {
+    margin-top: 90px;
+    margin-bottom: 10px;
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+    }
+}
+
+.ranking_Wrap {
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .ranking_item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #9b9b9b;
+        border-radius: 10px;
+        .rank {
+            width: 40px;
+            h3 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .ranking_item_texts {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .ranking_item_data {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h2 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                    color: #9b9b9b;
+                }
+            }
+            .ranking_item_price {
+                display: flex;
+                align-items: center;
+                h3 {
+                    font-size: 18px;
+                    color: var(--accentColor);
+                }
+            }
+        }
+    }
+}
