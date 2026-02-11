@@ -9,7 +9,6 @@ const ramenDate = document.querySelector("#ramenDate");
 const ramenPrice = document.querySelector("#ramenPrice");
 const ramenTaste = document.querySelector("#ramenTaste");
 const changePicture = document.querySelector("#changePicture");
-// const ramenJudge = "";
 
 const today = new Date();
 console.log(today);
