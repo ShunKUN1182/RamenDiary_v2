@@ -3,9 +3,18 @@ import { supabase } from "./supabase.js";
 const ramenCount = document.querySelector("#ramenCount");
 const priceOutput = document.querySelector("#totalPrice");
 const ctx = document.getElementById("tasteChart");
+const databaseName = "ramen_data";
+const loginUser = JSON.parse(localStorage.getItem("loginUser"));
+if (!loginUser) {
+    alert("ログインしてください");
+    window.location.href = "./login.html";
+}
 
 async function totalPrice() {
-    const { data, error } = await supabase.from("ramen_data").select("ramen_price");
+    const { data, error } = await supabase
+        .from(databaseName)
+        .select("ramen_price")
+        .eq("userID", loginUser.id);
 
     if (error) {
         console.log(error);
@@ -29,7 +38,10 @@ async function totalPrice() {
 totalPrice();
 
 async function tasteChart() {
-    const { data, error } = await supabase.from("ramen_data").select("ramen_taste");
+    const { data, error } = await supabase
+        .from(databaseName)
+        .select("ramen_taste")
+        .eq("userID", loginUser.id);
 
     if (error) {
         console.log(error);
