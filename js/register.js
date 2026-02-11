@@ -7,12 +7,19 @@ const userPass = document.querySelector("#userPass");
 const submitBtn = document.querySelector("#submitBtn");
 
 submitBtn.addEventListener("click", async () => {
-    await supabase.from(databaseName).insert({
-        id: userID.value,
-        password: userPass.value,
-        name: userName.value,
-    });
+    if (!userID.value || !userPass.value || !userName.value) {
+        alert("全ての項目を入力してください");
+        return;
+    }
+    const { data, error } = await supabase.from(databaseName).insert([
+        {
+            userID: userID.value,
+            password: userPass.value,
+            name: userName.value,
+        },
+    ]);
     if (error) {
+        console.log(error);
         alert("error");
     } else {
         alert("アカウントが登録されました！");
