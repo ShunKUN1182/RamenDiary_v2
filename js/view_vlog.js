@@ -39,7 +39,7 @@ function outputRamen(box) {
     ramenDatas.innerHTML = "";
     box.forEach((r) => {
         ramenDatas.insertAdjacentHTML(
-            "beforeend",
+            "afterbegin",
             `
                     <div class="ramen_data">
                         <img src="${r.image_url}" alt="" />
