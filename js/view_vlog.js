@@ -28,11 +28,18 @@ async function loadData() {
                 ramen_name: data[i].ramen_name,
                 ramen_taste: data[i].ramen_taste,
                 timeData: timeData,
+                sortTimeData: data[i].ramen_date,
                 ramen_price: data[i].ramen_price,
             });
         }
     }
-    outputRamen(ramenBox);
+
+    let newRamenBox = ramenBox.sort(
+        (a, b) => Date.parse(a.sortTimeData) - Date.parse(b.sortTimeData),
+    );
+    console.log(newRamenBox);
+
+    outputRamen(newRamenBox);
 }
 
 function outputRamen(box) {
