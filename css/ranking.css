@@ -9,12 +9,11 @@
 }
 
 .ranking_Wrap {
-    height: 400px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 170px;
+    margin-bottom: 60px;
     .ranking_item {
         display: flex;
         align-items: center;
