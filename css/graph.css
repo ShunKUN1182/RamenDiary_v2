@@ -40,7 +40,7 @@
 
 .graph_wrap {
     /* height: 300px; */
-    margin: 20px 20px 80px;
+    margin: 20px 20px;
     background-color: var(--whiteColor);
     border-radius: 10px;
     padding: 20px;
@@ -49,4 +49,75 @@
 .graph_wrap canvas {
     width: 100% !important;
     height: 100% !important;
+}
+
+.pickup_ramen {
+    margin-bottom: 100px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    h2 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .ramen_data {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        background-color: var(--whiteColor);
+        height: 150px;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+        padding: 24px 20px;
+        margin-bottom: 15px;
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+            border: solid 4px var(--baseColor);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+        }
+        .ramen_data_text {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            .ramen_data_shop {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                h2 {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+            .ramen_data_option {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                p {
+                    color: var(--borderGray);
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                h3 {
+                    color: var(--accentColor);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
 }
