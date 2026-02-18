@@ -4,6 +4,8 @@ const ramenDatas = document.querySelector(".ramen_datas");
 const ramenFilter = document.querySelector("#ramenFilter");
 const databaseName = "ramen_data";
 const loginUser = JSON.parse(localStorage.getItem("loginUser"));
+const sort = document.querySelector("#sort");
+const filter = document.querySelector("#filter");
 
 if (!loginUser) {
     alert("ログインしてください");
@@ -73,4 +75,24 @@ loadData();
 ramenFilter.addEventListener("input", (e) => {
     let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_name.includes(e.target.value));
     outputRamen(NewramenBox);
+});
+
+sort.addEventListener("change", () => {
+    if (sort.value == "new") {
+        let NewramenBox = ramenBox.sort(
+            (a, b) => Date.parse(a.sortTimeData) - Date.parse(b.sortTimeData),
+        );
+        outputRamen(NewramenBox);
+    } else if (sort.value == "old") {
+        let NewramenBox = ramenBox.sort(
+            (a, b) => Date.parse(b.sortTimeData) - Date.parse(a.sortTimeData),
+        );
+        outputRamen(NewramenBox);
+    } else if (sort.value == "high") {
+        let NewramenBox = ramenBox.sort((a, b) => a.ramen_price - b.ramen_price);
+        outputRamen(NewramenBox);
+    } else if (sort.value == "row") {
+        let NewramenBox = ramenBox.sort((a, b) => b.ramen_price - a.ramen_price);
+        outputRamen(NewramenBox);
+    }
 });
