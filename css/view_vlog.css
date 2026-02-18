@@ -111,11 +111,32 @@
             .ramen_data_option {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 width: 100%;
-                p {
-                    color: var(--borderGray);
-                    font-size: 12px;
-                    font-weight: 500;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    p {
+                        color: var(--borderGray);
+                        font-size: 12px;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        span {
+                            width: 16px;
+                            height: 16px;
+                            background-image: url(../images/map_icon.png);
+                            background-position: center;
+                            background-size: cover;
+                        }
+                        &:nth-child(2) {
+                            span {
+                                background-image: url(../images/time_icon.png);
+                            }
+                        }
+                    }
                 }
                 h3 {
                     color: var(--accentColor);
