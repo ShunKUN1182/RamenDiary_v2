@@ -78,6 +78,16 @@ ramenFilter.addEventListener("input", (e) => {
 });
 
 sort.addEventListener("change", () => {
+    sortCheck();
+    filterCheck();
+});
+
+filter.addEventListener("change", () => {
+    sortCheck();
+    filterCheck();
+});
+
+function sortCheck() {
     if (sort.value == "new") {
         let NewramenBox = ramenBox.sort(
             (a, b) => Date.parse(a.sortTimeData) - Date.parse(b.sortTimeData),
@@ -95,9 +105,9 @@ sort.addEventListener("change", () => {
         let NewramenBox = ramenBox.sort((a, b) => b.ramen_price - a.ramen_price);
         outputRamen(NewramenBox);
     }
-});
+}
 
-filter.addEventListener("change", () => {
+function filterCheck() {
     if (filter.value == "shouyu") {
         let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "しょうゆ");
         outputRamen(NewramenBox);
@@ -128,4 +138,4 @@ filter.addEventListener("change", () => {
     } else {
         outputRamen(ramenBox);
     }
-});
+}
