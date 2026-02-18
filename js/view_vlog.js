@@ -96,3 +96,36 @@ sort.addEventListener("change", () => {
         outputRamen(NewramenBox);
     }
 });
+
+filter.addEventListener("change", () => {
+    if (filter.value == "shouyu") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "しょうゆ");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "miso") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "みそ");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "sio") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "しお");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "tonkotu") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "とんこつ");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "toripaitan") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "鶏白湯");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "tukemen") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "つけ麺");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "jirou") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "二郎系");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "iekei") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "家系");
+        outputRamen(NewramenBox);
+    } else if (filter.value == "mazesoba") {
+        let NewramenBox = ramenBox.filter((ramenBox) => ramenBox.ramen_taste == "まぜそば");
+        outputRamen(NewramenBox);
+    } else {
+        outputRamen(ramenBox);
+    }
+});
