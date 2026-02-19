@@ -69,7 +69,7 @@
         }
     }
     .change_mode {
-        background-color: var(--whiteColor);
+        background-color: var(--blockColor);
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
         width: 60px;
         height: 30px;
@@ -85,14 +85,33 @@
             position: absolute;
             top: 2px;
             left: 4px;
-            background-color: var(--baseColor);
+            background-color: var(--whiteColor);
             width: 26px;
             height: 26px;
             border-radius: 100%;
             transition: 0.3s;
+            /* position: relative; */
+            &::after {
+                content: "";
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                /* background-color: tomato; */
+                background-image: url(../images/icon_mode_1.svg);
+                background-size: cover;
+                background-position: center;
+                /* background-color: #fff; */
+                top: 15%;
+                left: 15%;
+            }
         }
         .mode_on {
             transform: translateX(25px);
+            &::after {
+                background-image: url(../images/icon_mode_2.svg);
+                top: 18%;
+                background-size: contain;
+            }
         }
     }
 }
