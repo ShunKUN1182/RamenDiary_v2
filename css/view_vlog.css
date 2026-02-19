@@ -106,7 +106,7 @@
             }
         }
         .mode_on {
-            transform: translateX(25px);
+            transform: translateX(26px);
             &::after {
                 background-image: url(../images/icon_mode_2.svg);
                 top: 18%;
@@ -252,10 +252,10 @@
                     font-weight: 500;
                     display: flex;
                     align-items: center;
-                    gap: 2px;
+                    gap: 4px;
                     span {
-                        width: 10px;
-                        height: 10px;
+                        width: 12px;
+                        height: 12px;
                         background-image: url(../images/time_icon.png);
                         background-position: center;
                         background-size: cover;
