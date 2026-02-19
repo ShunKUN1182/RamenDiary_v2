@@ -28,26 +28,32 @@
                 </div>
                 <div class="filter_box">
                     <div>
-                        <select name="sort" id="sort">
-                            <option value="new">日付の新着順</option>
-                            <option value="old">日付の古い順</option>
-                            <option value="high">値段が高い順</option>
-                            <option value="row">値段が安い順</option>
-                        </select>
+                        <div class="sortFilter">
+                            <select name="sort" id="sort">
+                                <option value="new">日付の新着順</option>
+                                <option value="old">日付の古い順</option>
+                                <option value="high">値段が高い順</option>
+                                <option value="row">値段が安い順</option>
+                            </select>
+                        </div>
+                        <div class="sortFilter">
+                            <select name="filter" id="filter">
+                                <option value="all">全種類</option>
+                                <option value="shouyu">しょうゆ</option>
+                                <option value="miso">みそ</option>
+                                <option value="sio">しお</option>
+                                <option value="tonkotu">とんこつ</option>
+                                <option value="toripaitan">鶏白湯</option>
+                                <option value="tukemen">つけ麺</option>
+                                <option value="jirou">二郎系</option>
+                                <option value="iekei">家系</option>
+                                <option value="mazesoba">まぜそば</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <select name="filter" id="filter">
-                            <option value="all">全種類</option>
-                            <option value="shouyu">しょうゆ</option>
-                            <option value="miso">みそ</option>
-                            <option value="sio">しお</option>
-                            <option value="tonkotu">とんこつ</option>
-                            <option value="toripaitan">鶏白湯</option>
-                            <option value="tukemen">つけ麺</option>
-                            <option value="jirou">二郎系</option>
-                            <option value="iekei">家系</option>
-                            <option value="mazesoba">まぜそば</option>
-                        </select>
+                    <div class="change_mode">
+                        <input type="checkbox" name="" id="changeMode" />
+                        <span></span>
                     </div>
                 </div>
             </div>

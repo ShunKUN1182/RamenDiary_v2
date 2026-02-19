@@ -39,7 +39,6 @@
 }
 
 .graph_wrap {
-    /* height: 300px; */
     margin: 20px 20px;
     background-color: var(--whiteColor);
     border-radius: 10px;
@@ -62,7 +61,6 @@
     }
     p {
         font-size: 10px;
-        /* margin-bottom: 10px; */
     }
     .ramen_data {
         display: flex;

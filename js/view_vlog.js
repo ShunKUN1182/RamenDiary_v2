@@ -6,6 +6,7 @@ const databaseName = "ramen_data";
 const loginUser = JSON.parse(localStorage.getItem("loginUser"));
 const sort = document.querySelector("#sort");
 const filter = document.querySelector("#filter");
+const changeMode = document.querySelector("#changeMode");
 
 if (!loginUser) {
     alert("ログインしてください");
@@ -87,6 +88,10 @@ sort.addEventListener("change", () => {
 filter.addEventListener("change", () => {
     sortCheck();
     filterCheck();
+});
+
+changeMode.addEventListener("change", () => {
+    console.log("foo");
 });
 
 function sortCheck() {
