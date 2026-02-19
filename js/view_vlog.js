@@ -83,6 +83,7 @@ function outputRamen(box) {
                         <h3>${r.ramen_taste}</h3>
                         <div class="ramen_list_option">
                             <h4>¥${r.ramen_price}</h4>
+                            <p><span></span><time datetime="${r.sortTimeData}">${r.timeData[0]}年${r.timeData[1]}月${r.timeData[2]}日</time></p>
                         </div>
                     </div>
                 </div>

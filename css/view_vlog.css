@@ -210,7 +210,7 @@
     gap: 15px;
     margin-bottom: 90px;
     .ramen_list {
-        height: 200px;
+        height: 210px;
         border-radius: 10px;
         background-color: var(--whiteColor);
 
@@ -237,36 +237,28 @@
             }
             .ramen_list_option {
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
-                align-items: flex-start;
+                gap: 2px;
+                /* align-items: center; */
                 h4 {
                     font-size: 20px;
                     font-weight: bold;
                     color: var(--accentColor);
                 }
-                div {
+                p {
+                    color: var(--borderGray);
+                    font-size: 10px;
+                    font-weight: 500;
                     display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                    p {
-                        color: var(--borderGray);
-                        font-size: 11px;
-                        font-weight: 500;
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-                        span {
-                            width: 14px;
-                            height: 14px;
-                            background-image: url(../images/map_icon.png);
-                            background-position: center;
-                            background-size: cover;
-                        }
-                        &:nth-child(2) {
-                            span {
-                                background-image: url(../images/time_icon.png);
-                            }
-                        }
+                    align-items: center;
+                    gap: 2px;
+                    span {
+                        width: 10px;
+                        height: 10px;
+                        background-image: url(../images/time_icon.png);
+                        background-position: center;
+                        background-size: cover;
                     }
                 }
             }
