@@ -116,12 +116,15 @@
     }
 }
 
+#modeOff {
+    display: none;
+}
+
 .ramen_datas {
     margin: 15px 20px 110px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    display: none;
     .ramen_data {
         display: flex;
         justify-content: space-between;
@@ -205,6 +208,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
+    margin-bottom: 90px;
     .ramen_list {
         height: 200px;
         border-radius: 10px;

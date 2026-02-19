@@ -1,6 +1,7 @@
 import { supabase } from "./supabase.js";
 
 const ramenDatas = document.querySelector(".ramen_datas");
+const ramenLists = document.querySelector(".ramen_lists");
 const ramenFilter = document.querySelector("#ramenFilter");
 const databaseName = "ramen_data";
 const loginUser = JSON.parse(localStorage.getItem("loginUser"));
@@ -71,6 +72,21 @@ function outputRamen(box) {
                 </div>
                 `,
         );
+        ramenLists.insertAdjacentHTML(
+            "afterbegin",
+            `
+                <div class="ramen_list">
+                    <img src="${r.image_url}" alt="" />
+                    <div class="ramen_list_text">
+                        <h2>${r.ramen_name}</h2>
+                        <h3>${r.ramen_taste}</h3>
+                        <div class="ramen_list_option">
+                            <h4>¥${r.ramen_price}</h4>
+                        </div>
+                    </div>
+                </div>
+            `,
+        );
     });
 }
 
@@ -91,8 +107,21 @@ filter.addEventListener("change", () => {
     filterCheck();
 });
 
+let modeCheck = "off";
+
 changeMode.addEventListener("change", () => {
     modeInput.classList.toggle("mode_on");
+    ramenDatas.removeAttribute("id");
+    ramenLists.removeAttribute("id");
+    if (modeCheck == "on") {
+        ramenLists.setAttribute("id", "modeOff");
+        modeCheck = "off";
+        console.log("iri");
+    } else {
+        ramenDatas.setAttribute("id", "modeOff");
+        modeCheck = "on";
+        console.log("ue");
+    }
 });
 
 function sortCheck() {
