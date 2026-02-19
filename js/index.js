@@ -9,6 +9,7 @@ const ramenDate = document.querySelector("#ramenDate");
 const ramenPrice = document.querySelector("#ramenPrice");
 const ramenTaste = document.querySelector("#ramenTaste");
 const changePicture = document.querySelector("#changePicture");
+const ramenMap = document.querySelector("#ramenMap");
 const loginUser = JSON.parse(localStorage.getItem("loginUser"));
 
 if (!loginUser) {
@@ -63,6 +64,7 @@ submitBtn.addEventListener("click", async () => {
         ramen_price: ramenPrice.valueAsNumber,
         ramen_taste: ramenTaste.value,
         ramen_date: ramenDate.value,
+        ramen_map: ramenMap.value,
     });
     if (insertError) {
         console.log(insertError);

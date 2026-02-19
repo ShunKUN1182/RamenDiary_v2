@@ -119,14 +119,14 @@
                     gap: 4px;
                     p {
                         color: var(--borderGray);
-                        font-size: 12px;
+                        font-size: 11px;
                         font-weight: 500;
                         display: flex;
                         align-items: center;
                         gap: 5px;
                         span {
-                            width: 16px;
-                            height: 16px;
+                            width: 14px;
+                            height: 14px;
                             background-image: url(../images/map_icon.png);
                             background-position: center;
                             background-size: cover;

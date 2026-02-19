@@ -32,6 +32,7 @@ async function loadData() {
                 timeData: timeData,
                 sortTimeData: data[i].ramen_date,
                 ramen_price: data[i].ramen_price,
+                ramen_map: data[i].ramen_map,
             });
         }
     }
@@ -50,21 +51,22 @@ function outputRamen(box) {
         ramenDatas.insertAdjacentHTML(
             "afterbegin",
             `
-                    <div class="ramen_data">
-                        <img src="${r.image_url}" alt="" />
-                        <div class="ramen_data_text">
-                            <div class="ramen_data_shop">
-                                <h2>${r.ramen_name}</h2>
-                                <p>${r.ramen_taste}</p>
+                <div class="ramen_data">
+                    <img src="${r.image_url}" alt="" />
+                    <div class="ramen_data_text">
+                        <div class="ramen_data_shop">
+                            <h2>${r.ramen_name}</h2>
+                            <p>${r.ramen_taste}</p>
+                        </div>
+                        <div class="ramen_data_option">
+                            <div>
+                                <p><span></span>${r.ramen_map}</p>
+                                <p><span></span><time datetime="${r.sortTimeData}">${r.timeData[0]}年${r.timeData[1]}月${r.timeData[2]}日</time></p>
                             </div>
-                            <div class="ramen_data_option">
-                                <p>
-                                    <time datetime="${r.timeData}">${r.timeData[0]}年${r.timeData[1]}月${r.timeData[2]}日</time>
-                                </p>
-                                <h3>¥${r.ramen_price}</h3>
-                            </div>
+                            <h3>¥${r.ramen_price}</h3>
                         </div>
                     </div>
+                </div>
                 `,
         );
     });
