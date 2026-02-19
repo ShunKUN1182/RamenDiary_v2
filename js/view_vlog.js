@@ -50,6 +50,7 @@ async function loadData() {
 
 function outputRamen(box) {
     ramenDatas.innerHTML = "";
+    ramenLists.innerHTML = "";
     box.forEach((r) => {
         ramenDatas.insertAdjacentHTML(
             "afterbegin",
@@ -116,11 +117,9 @@ changeMode.addEventListener("change", () => {
     if (modeCheck == "on") {
         ramenLists.setAttribute("id", "modeOff");
         modeCheck = "off";
-        console.log("iri");
     } else {
         ramenDatas.setAttribute("id", "modeOff");
         modeCheck = "on";
-        console.log("ue");
     }
 });
 
